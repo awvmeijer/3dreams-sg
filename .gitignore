@@ -1,0 +1,21 @@
+# secrets
+.env
+.env.*
+*.pem
+*.key
+
+# data
+data/
+*.nc
+*.h5
+*.hdf5
+*.parquet
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# os
+.DS_Store
