@@ -95,7 +95,7 @@ coefficients in [`src/scorer.py`](src/scorer.py) are placeholders chosen to make
 the synthetic example readable, and the structure is illustrative rather than a
 line-by-line copy of the deployed scorer.
 
-The live system runs at NTU's Earth Observatory of Singapore.
+The live system runs at NTU's Centre for Climate Change and Environmental Health, which has operated it since handover in August 2026.
 
 ## About
 
