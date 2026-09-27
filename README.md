@@ -2,7 +2,8 @@
 
 > Real-time atmospheric-intelligence platform that turns four raw sensor streams into a decision about whether anyone needs to act.
 
-[![Live demo](https://img.shields.io/badge/demo-live-3ddc97?style=flat-square)](https://3dreams-demo.vercel.app/demo/v5/index.html)
+[![Demo film](https://img.shields.io/badge/demo-film-3ddc97?style=flat-square)](https://anthonymeijer.dev/projects/3dreams)
+[![Live preview](https://img.shields.io/badge/dashboard-live%20preview-3ddc97?style=flat-square)](https://lidar-dashboard-3dreams.vercel.app)
 [![Portfolio](https://img.shields.io/badge/portfolio-anthonymeijer.dev-262626?style=flat-square)](https://anthonymeijer.dev)
 [![Tests](https://img.shields.io/badge/tests-14%20passing-3ddc97?style=flat-square)](tests/test_scorer.py)
 
