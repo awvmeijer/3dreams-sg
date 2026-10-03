@@ -7,6 +7,11 @@
 [![Portfolio](https://img.shields.io/badge/portfolio-anthonymeijer.dev-262626?style=flat-square)](https://anthonymeijer.dev)
 [![Tests](https://img.shields.io/badge/tests-14%20passing-3ddc97?style=flat-square)](tests/test_scorer.py)
 
+<p align="center">
+  <a href="https://anthonymeijer.dev/projects/3dreams"><img alt="The 3DREAMS@SG Geo Data Hub in 3D: the aerosol volume over Raffles Girls' School on the 12 February 2026 02:30 SGT replay, with the Layers and Camera panels. Opens the film." src="media/geohub.jpg" width="100%"></a>
+</p>
+<p align="center"><sub>The Geo Data Hub on the 12 February 2026 replay, from the film. Map © Mapbox © OpenStreetMap.</sub></p>
+
 ## What it does
 
 3DREAMS@SG watches the atmosphere over Singapore and decides when transported
@@ -14,7 +19,7 @@ aerosol is about to become a surface air-quality problem. It fuses Doppler-LiDAR
 backscatter and wind, NEA air-quality readings, satellite fire detections, and a
 cloud mask onto a single clock, across three sites, on a ten-minute cycle, then
 scores every two-hour window and pushes anything that matters to a human over
-Teams or Telegram.
+Microsoft Teams.
 
 The hard part is not ingesting the data. It is deciding, without a person in the
 loop, whether a bright layer at one kilometre is transported smoke that will
