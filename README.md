@@ -30,9 +30,9 @@ reach the ground this afternoon, or a cloud base that means nothing at all.
 <!-- pipeline:start -->
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-dark.67eff571.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-light.594a7e8e.svg">
-    <img alt="3DREAMS@SG pipeline: four sources fused on a ten-minute clock, two detection stages through one shared scorer, agents and dashboards downstream, and a replayable episode ledger." src="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-light.594a7e8e.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-dark.ba883f12.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-light.39b36244.svg">
+    <img alt="3DREAMS@SG pipeline: four sources fused on a ten-minute clock, two detection stages through one shared scorer, agents and dashboards downstream, and a replayable episode ledger." src="https://raw.githubusercontent.com/awvmeijer/3dreams-sg/main/assets/pipeline-light.39b36244.svg" width="100%">
   </picture>
 </p>
 <!-- pipeline:end -->
