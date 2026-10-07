@@ -41,15 +41,18 @@ reach the ground this afternoon, or a cloud base that means nothing at all.
   quality, satellite fire detections, and a cloud mask
 - **Fuse** onto one ten-minute clock across three sites, carrying gaps
   explicitly instead of interpolating over them
-- **Store** every scored window in an append-only episode ledger
+- **Record** every detected episode in a ledger that replay reads back
+  through the same scorer
 - **Score** each two-hour window through two detection stages: a six-component
-  probability model with a diurnal boundary-layer breakthrough forecast, paired
-  with a three-stage cloud classifier
-- **Act** through proactive Teams and Telegram agents with 17 commands, a
-  10-panel mission-control dashboard, and a 5-viewport geospatial hub
+  probability model with a diurnal boundary-layer breakthrough forecast, and a
+  three-stage cloud classifier beside it
+- **Act** through a Microsoft Teams agent that posts the alerts and answers 17
+  commands, a Telegram bot for plots and status, a 10-panel mission-control
+  dashboard, and a 5-viewport geospatial hub
 
 The full write-up is in [docs/architecture.md](docs/architecture.md), including
-why the cloud classifier is a gate rather than a seventh weighted term, and why
+why this extract makes the cloud check a gate rather than a seventh weighted
+term, and why
 the scorer is a pure function.
 
 ## Run it
@@ -76,12 +79,15 @@ python3 -m unittest discover -s tests
   dashboard call the same function. They agree by construction rather than by
   convention, which is only possible because the scorer takes a window and
   returns a score, with no clock reads and no I/O.
-- **The episode ledger is append-only.** Changing the detection logic means
-  rerunning history and diffing the verdicts before anything ships. A detector
+- **Every episode is replayable.** Detected episodes are recorded in a ledger,
+  and changing the detection logic means rerunning history through the same
+  scorer and diffing the verdicts before anything ships. A detector
   you cannot re-run against the past is a detector you cannot safely change.
 - **Cloud is a gate, not a term.** A cloud base looks like dense transported
   aerosol to a backscatter-only test. As a weighted component it could be
-  outvoted by a high transport score; as a gate it cannot.
+  outvoted by a high transport score; as a gate it cannot. That is this
+  extract's design. In production the three-stage cloud mask runs beside the
+  score and its verdict goes on the alert card, in front of the operator.
 - **Time of day is a first-class input.** Aloft is not the same as at the
   surface. The boundary layer has to grow past a layer before anyone breathes
   it, so the same profile means different things at 03:00 and 14:00.

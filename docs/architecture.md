@@ -18,7 +18,7 @@ flowchart LR
 
   P --> ACT
   C --> ACT
-  ACT["Teams + Telegram agents · 17 commands<br/>10-panel mission control · 5-viewport geospatial hub"]
+  ACT["Teams agent · alerts + 17 commands<br/>Telegram · plots and status<br/>10-panel mission control · 5-viewport geospatial hub"]
 
   LEDGER -.-> SCORE
 ```
@@ -59,8 +59,8 @@ They are separate because cloud is the dominant false-positive source and it
 fails differently from every other error. A cloud base returns a strong, sharp
 backscatter signal at a plausible height, which is precisely what a dense
 transported layer looks like to a single-channel test. Folding cloud in as a
-seventh weighted term would let a high transport score outvote it. It is a
-gate, not a term.
+seventh weighted term would let a high transport score outvote it. In this
+extract it is a gate, not a term.
 
 The classifier runs three stages in order, cheapest first, and the first stage
 to reject wins:
@@ -70,6 +70,13 @@ to reject wins:
 | 1 | gross opacity | saturating returns, obvious cloud |
 | 2 | vertical structure | sharp edges that aerosol layers do not have |
 | 3 | persistence | how much of the column sits near the peak |
+
+Production differs in two ways. Its three stages are an onset test (a return
+too strong, or an edge too sharp), a column test (the cloud's body above its
+base and the attenuation shadow it casts), and a persistence test over
+consecutive minutes. And the mask runs beside the six-component score rather
+than gating it: its verdict travels on the alert card, so the operator sees
+whether a layer could be cloud before acting on it.
 
 ## Why the diurnal term exists
 
@@ -86,8 +93,9 @@ at 03:00.
 
 ## The episode ledger
 
-Every scored window is appended to a ledger, never updated in place. Replay
-reads the ledger back through the same scorer.
+Every detected episode is recorded in the ledger under a stable key, so a
+replay updates its own record instead of adding a second one. Replay reads the
+ledger back through the same scorer.
 
 This is what makes a change to the detection logic auditable: rerun history,
 diff the verdicts, and see exactly which episodes changed and why, before the
