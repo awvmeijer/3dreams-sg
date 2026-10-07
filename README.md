@@ -94,7 +94,7 @@ python3 -m unittest discover -s tests
 
 ## Stack
 
-`Python` · `PostgreSQL` · `Next.js` · `TypeScript` · `Three.js` · `Deck.GL`
+`Python` · `DuckDB` · `PostgreSQL` · `Next.js` · `TypeScript` · `Three.js` · `Deck.GL`
 
 ## Status and scope
 
